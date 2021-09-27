@@ -8,8 +8,7 @@
 #include "chapter3/zombie_child.h"
 #include "chapter3/pid_manager.h"
 #include "chapter3/collatz_conjecture.h"
-#include <sys/mman.h>
-
+#include "chapter3/string_reverse.h"
 void print_array(int *a) {
     int i = 0, sz = sizeof(a) / sizeof(*a);
     for (i = 0; i < sz; i++) {
@@ -18,7 +17,7 @@ void print_array(int *a) {
 }
 
 int main() {
-    collatz();
+    reverse_string("hIm");
 
     return 0;
 }
