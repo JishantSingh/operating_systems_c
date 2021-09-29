@@ -10,7 +10,7 @@
 #endif //PLAYGROUND_C_PID_MANAGER_H
 
 #define MIN_PID 300
-#define MAX_PID 5000
+#define MAX_PID 310
 #define NUM_PIDS (MAX_PID - MIN_PID +1)
 
 int *pid_map;
@@ -39,6 +39,9 @@ int allocate_pid() {
     return -1;
 }
 
-void release_pid(int pid) {
-    pid_map[map_to_index(pid)] = 0;
+int release_pid(int pid) {
+    if(pid_map[map_to_index(pid)] == 1) {
+        return pid_map[map_to_index(pid)] = 0;
+    }
+    return -1;
 }
